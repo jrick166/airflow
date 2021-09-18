@@ -24,7 +24,7 @@ CURATED_ZONE = getenv("CURATED_ZONE", "delta")
 # [START default_args]
 default_args = {
     'owner': 'luan moreno m. maciel',
-    'start_date': datetime(2021, 3, 24),
+    'start_date': datetime(2021, 9, 18),
     'depends_on_past': False,
     'email': ['luan.moreno@owshq.com'],
     'email_on_failure': False,
