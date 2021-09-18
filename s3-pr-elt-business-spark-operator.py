@@ -61,7 +61,7 @@ with DAG(
         task_id='pr_elt_business_spark_operator',
         namespace='processing',
         application_file='pr-elt-business.yaml',
-        kubernetes_conn_id='minikube',
+        kubernetes_conn_id='kubernetes_default',
         do_xcom_push=True)
 
     # monitor spark application
@@ -71,7 +71,7 @@ with DAG(
         task_id='monitor_spark_app_status',
         namespace="processing",
         application_name="{{ task_instance.xcom_pull(task_ids='pr_elt_business_spark_operator')['metadata']['name'] }}",
-        kubernetes_conn_id="minikube")
+        kubernetes_conn_id="kubernetes_default")
 
     # check if folder and file exists
     # delta zone for data lakehouse
