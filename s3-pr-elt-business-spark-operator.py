@@ -52,6 +52,7 @@ with DAG(
         wildcard_match=True,
         timeout=18 * 60 * 60,
         poke_interval=120,
+        mode='reschedule',
         aws_conn_id='minio')
 
     # use spark-on-k8s to operate against the data
